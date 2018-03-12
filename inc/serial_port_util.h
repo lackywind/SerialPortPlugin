@@ -5,6 +5,7 @@
 *	   Author:Shen
 *
 */
+
 enum class ParityOption
 {
 	odd,

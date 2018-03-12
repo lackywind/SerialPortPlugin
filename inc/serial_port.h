@@ -6,6 +6,10 @@
 *
 */
 
+#ifndef SERIALPORT_H_
+#define SERIALPORT_H_
+
+
 #include <termios.h> //tty device configuration
 #include <fcntl.h> 
 #include <sys/types.h>
@@ -15,9 +19,6 @@
 #include <iostream>
 
 #include "file_descriptor_owner.h"
-
-
-
 
 enum ParityOption
 {
@@ -42,9 +43,9 @@ enum DataBitsOption
 class SerialPort
 {
 public:
-	SerialPort(std::string device,unsigned int baudRate = B115200,DataBitsOption dataBits = DataBits,ParityOption parity = Parity,StopBitsOption stopBits = StopBits);
+	SerialPort(std::string device,unsigned int baudRate = B115200,DataBitsOption dataBits = DataBitsOption::eight,ParityOption parity = ParityOption::none,StopBitsOption stopBits = StopBitsOption::one);
 	virtual ~SerialPort();
-	void OpenDevice(std::string);
+	void OpenDevice(std::string device);
 	void Configure(unsigned int baudRate,DataBitsOption dataBits,ParityOption parity,StopBitsOption stopBits); 
 	
 private:
@@ -53,3 +54,4 @@ private:
 	int _isOpen; // device is oped or not 	
 };
 
+#endif

@@ -9,10 +9,10 @@
 
 #include "serial_port.h"
 
-SerialPort(std::string device,unsigned int baudRate,DataBitsOption dataBits,ParityOption parity,StopBitsOption stopBits)
+SerialPort::SerialPort(std::string device,unsigned int baudRate,DataBitsOption dataBits,ParityOption parity,StopBitsOption stopBits)
 {
 	OpenDevice(device);
-	configure(bauRate,dataBits,parity,stopBits);
+	Configure(bauRate,dataBits,parity,stopBits);
 }
 
 SerialPort::~SerialPort()
@@ -48,7 +48,7 @@ void SerialPort::OpenDevice(std::string device)
 * @param stopBits 
 *
 */
-void Configure(unsigned int baudRate,DataBitsOption dataBits,ParityOption parity,StopBitsOption stopBits);
+void SerialPort::Configure(unsigned int baudRate,DataBitsOption dataBits,ParityOption parity,StopBitsOption stopBits);
 {
 	// structure used to tty device configuration
 	termios config;

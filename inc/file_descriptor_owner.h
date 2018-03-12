@@ -10,8 +10,8 @@
 class FileDescriptorOwner
 {
 public:
-	virtual void processData()=0;
-	virtual int getFileDescriptor()=0;
+	virtual void ProcessData()=0;
+	virtual int GetFileDescriptor()=0;
 	virtual ~FileDescriptorOwner();	
 };
 
