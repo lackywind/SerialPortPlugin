@@ -12,6 +12,6 @@ main.o:src/main.cpp
 serial_port.o:src/serial_port.cpp
 	g++ -I inc -c src/serial_port.cpp -o serial_port.o
 
-claen:
+clean:
 	rm *.o
 
